@@ -2,20 +2,18 @@ package com.example.service;
 
 import com.example.model.User;
 import com.example.repository.UserRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Transactional(readOnly = true)
+@AllArgsConstructor
 @Service
 public class UserServiceImpl implements UserService {
 
     private UserRepository repository;
-
-    public UserServiceImpl(UserRepository repository) {
-        this.repository = repository;
-    }
 
     @Transactional
     @Override
